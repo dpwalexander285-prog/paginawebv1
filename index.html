@@ -1,325 +1,566 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IESTP Huanta</title>
+    <title>IESTP Huanta - Formando Profesionales de Excelencia</title>
     <link href="./css/output.css" rel="stylesheet">
     <link href="./css/footer.css" rel="stylesheet">
+    <link href="./css/home.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * { font-family: 'Poppins', sans-serif; }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.95) 0%, rgba(37, 99, 235, 0.85) 50%, rgba(59, 130, 246, 0.75) 100%);
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .wave-animate {
+            animation: wave 3s ease-in-out infinite;
+            display: inline-block;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite;
+        }
+    </style>
 </head>
+<body class="bg-gray-50 overflow-x-hidden">
 
-<body>
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20información%20sobre%20el%20IESTP%20Huanta" 
+       target="_blank"
+       class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center transition-all z-50 group hover:scale-110">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span class="absolute right-20 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition whitespace-nowrap">
+            💬 ¿Necesitas ayuda? Escríbenos
+        </span>
+    </a>
 
-    <!-- HEADER -->
-    <header>
+    <!-- TOP BAR -->
+    <div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-2 text-sm">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-between items-center gap-4">
+                <div class="flex flex-wrap items-center gap-4">
+                    <a href="tel:066322296" class="flex items-center gap-2 hover:text-blue-200 transition">
+                        <i data-lucide="phone" class="w-4 h-4"></i>
+                        <span>(066) 322296</span>
+                    </a>
+                    <span class="hidden sm:inline">|</span>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-4 h-4"></i>
+                        <span>Jr. Córdova N° 650 - Ayacucho</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="mailto:contactos@iestphuanta.edu.pe" class="flex items-center gap-2 hover:text-blue-200 transition">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">contactos@iestphuanta.edu.pe</span>
+                    </a>
+                    <span class="hidden sm:inline">|</span>
+                    <a href="#" class="flex items-center gap-2 hover:text-blue-200 transition">
+                        <i data-lucide="facebook" class="w-4 h-4"></i>
+                        <span class="hidden sm:inline">Facebook</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <nav>
+    <!-- HEADER / NAVBAR -->
+    <header id="navbar" class="bg-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center shadow-lg">
+                        <span class="text-white font-bold text-sm">HUANTA</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <h1 class="text-xl font-bold text-gray-800">IESTP Huanta</h1>
+                        <p class="text-xs text-gray-500">Excelencia Educativa desde 1985</p>
+                    </div>
+                </div>
 
-            <ul>
+                <!-- BUSCADOR -->
+                <div class="hidden lg:block flex-1 max-w-md mx-8">
+                    <div class="relative">
+                        <input type="text" id="site-search" placeholder="Buscar carreras, trámites, información..." 
+                               class="w-full px-5 py-2.5 pl-12 border-2 border-gray-200 rounded-full focus:outline-none focus:border-blue-600 focus:ring-4 focus:ring-blue-100 transition">
+                        <i data-lucide="search" class="w-5 h-5 absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                        <div id="search-results" class="absolute top-full mt-2 w-full bg-white shadow-2xl rounded-xl hidden z-50 border max-h-96 overflow-y-auto"></div>
+                    </div>
+                </div>
 
-                <li>Nosotros</li>
+                <nav class="hidden xl:flex items-center gap-6">
+                    <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition font-medium">Inicio</a>
+                    <a href="#nosotros" class="text-gray-700 hover:text-blue-600 transition font-medium">Nosotros</a>
+                    <a href="#carreras" class="text-gray-700 hover:text-blue-600 transition font-medium">Carreras</a>
+                    <a href="pages/admision.html" class="text-gray-700 hover:text-blue-600 transition font-medium">Admisión</a>
+                    <a href="#servicios" class="text-gray-700 hover:text-blue-600 transition font-medium">Servicios</a>
+                    <a href="#contacto" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl hover:scale-105">
+                        Contáctanos
+                    </a>
+                </nav>
 
-                <li>Programas de Estudio</li>
+                <button id="mobile-menu-btn" class="xl:hidden p-2 hover:bg-gray-100 rounded-lg transition">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
 
-                <li>Admisión y Matrícula</li>
-
-                <li>Transparencia</li>
-
-                <li>Trámite</li>
-
-                <li>Contáctanos</li>
-
-                <li>Servicios</li>
-
-            </ul>
-
-        </nav>
-
+        <div id="mobile-menu" class="hidden xl:hidden bg-white border-t">
+            <div class="px-4 py-3 space-y-2">
+                <a href="#inicio" class="block py-2 px-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition">Inicio</a>
+                <a href="#nosotros" class="block py-2 px-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition">Nosotros</a>
+                <a href="#carreras" class="block py-2 px-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition">Carreras</a>
+                <a href="pages/admision.html" class="block py-2 px-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition">Admisión</a>
+                <a href="#contacto" class="block py-2 px-3 bg-blue-600 text-white rounded-lg text-center font-semibold">Contáctanos</a>
+            </div>
+        </div>
     </header>
 
-    <!-- MAIN -->
-    <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="relative h-[700px] overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('assets/images/hero-bg.jpg');">
+            <div class="hero-gradient absolute inset-0"></div>
+        </div>
+        <div class="relative container mx-auto px-4 h-full flex items-center">
+            <div class="max-w-3xl text-white fade-up">
+                <div class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-6 py-3 rounded-full mb-6 border border-white/30">
+                    <i data-lucide="award" class="w-5 h-5 text-yellow-300"></i>
+                    <span class="font-semibold">Instituto Licenciado por MINEDU</span>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Construye tu <span class="text-yellow-300 wave-animate">futuro</span><br>
+                    con excelencia
+                </h1>
+                <p class="text-xl mb-8 text-blue-100 leading-relaxed">
+                    Formamos profesionales técnicos competitivos con más de 39 años de experiencia. Tu éxito es nuestra misión.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#carreras" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 hover:text-blue-700 transition shadow-2xl transform hover:scale-105 inline-flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                        Ver Carreras
+                    </a>
+                    <a href="#nosotros" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-600 transition shadow-2xl transform hover:scale-105 inline-flex items-center gap-2">
+                        <i data-lucide="play-circle" class="w-5 h-5"></i>
+                        Conócenos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- HERO -->
+    <!-- ESTADÍSTICAS ANIMADAS -->
+    <section class="py-20 bg-white relative -mt-20 z-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="stat-card bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center text-white shadow-2xl hover:scale-105 transition fade-up">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="3000">0</div>
+                    <div class="text-blue-100">Estudiantes Egresados</div>
+                    <i data-lucide="graduation-cap" class="w-12 h-12 mx-auto mt-4 opacity-50"></i>
+                </div>
+                <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-8 text-center text-white shadow-2xl hover:scale-105 transition fade-up">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="50">0</div>
+                    <div class="text-blue-100">Docentes Especializados</div>
+                    <i data-lucide="users" class="w-12 h-12 mx-auto mt-4 opacity-50"></i>
+                </div>
+                <div class="stat-card bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-center text-white shadow-2xl hover:scale-105 transition fade-up">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="5">0</div>
+                    <div class="text-blue-100">Programas de Estudio</div>
+                    <i data-lucide="book-open" class="w-12 h-12 mx-auto mt-4 opacity-50"></i>
+                </div>
+                <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl p-8 text-center text-white shadow-2xl hover:scale-105 transition fade-up">
+                    <div class="text-5xl font-bold mb-2 counter" data-target="39">0</div>
+                    <div class="text-blue-100">Años de Experiencia</div>
+                    <i data-lucide="award" class="w-12 h-12 mx-auto mt-4 opacity-50"></i>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="hero">
-
-            <h1>
-                Construye tu futuro con formación de calidad
-            </h1>
-
-            <p>
-                Instituto de Educación Superior Público Huanta
-            </p>
-
-            <button>
-                Ver Programas
-            </button>
-
-        </section>
-
-        <!-- NOSOTROS -->
-
-        <section id="nosotros">
-
-            <h2>Sobre Nosotros</h2>
-
-            <p>
-                Somos una institución licenciada comprometida con la
-                formación profesional técnica de calidad.
-            </p>
-
-            <h3>Misión</h3>
-
-            <p>
-                Formar profesionales técnicos competitivos.
-            </p>
-
-            <h3>Visión</h3>
-
-            <p>
-                Ser líderes en educación superior tecnológica.
-            </p>
-
-        </section>
-
-        <!-- ESTADISTICAS -->
-
-        <section id="estadisticas">
-
-            <h2>Estadísticas</h2>
-
-            <div>
-
-                <h3>1000+</h3>
-                <p>Egresados</p>
-
+    <!-- CARRERAS -->
+    <section id="carreras" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-semibold mb-4">
+                    🎓 Oferta Académica
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Nuestros <span class="gradient-text">Programas de Estudio</span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Elige la carrera que se adapte a tus intereses
+                </p>
             </div>
 
-            <div>
+            <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover-lift fade-up">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i data-lucide="code" class="w-20 h-20 text-white/80 group-hover:scale-110 transition duration-500 relative z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Diseño y Programación Web</h3>
+                        <p class="text-gray-600 text-sm mb-4">Desarrollo de aplicaciones web modernas</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition">
+                            Ver más <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
 
-                <h3>50+</h3>
-                <p>Docentes</p>
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover-lift fade-up">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i data-lucide="heart-pulse" class="w-20 h-20 text-white/80 group-hover:scale-110 transition duration-500 relative z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Enfermería Técnica</h3>
+                        <p class="text-gray-600 text-sm mb-4">Formación para el sector salud</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition">
+                            Ver más <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
 
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover-lift fade-up">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i data-lucide="car" class="w-20 h-20 text-white/80 group-hover:scale-110 transition duration-500 relative z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Mecatrónica Automotriz</h3>
+                        <p class="text-gray-600 text-sm mb-4">Especialización en sistemas automotrices</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition">
+                            Ver más <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover-lift fade-up">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i data-lucide="wheat" class="w-20 h-20 text-white/80 group-hover:scale-110 transition duration-500 relative z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Industrias Alimentarias</h3>
+                        <p class="text-gray-600 text-sm mb-4">Procesamiento y control de alimentos</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition">
+                            Ver más <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group bg-white rounded-2xl shadow-xl overflow-hidden hover-lift fade-up">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 shimmer"></div>
+                        <i data-lucide="sprout" class="w-20 h-20 text-white/80 group-hover:scale-110 transition duration-500 relative z-10"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Producción Agropecuaria</h3>
+                        <p class="text-gray-600 text-sm mb-4">Gestión de producción agrícola</p>
+                        <a href="#" class="text-blue-600 font-semibold text-sm flex items-center gap-1 group-hover:gap-2 transition">
+                            Ver más <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div>
+            <div class="text-center mt-12 fade-up">
+                <a href="pages/carreras.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-700 transition shadow-xl hover:shadow-2xl hover:scale-105">
+                    Ver todas las carreras
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                <h3>5</h3>
-                <p>Programas de Estudio</p>
+    <!-- SOBRE NOSOTROS -->
+    <section id="nosotros" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-semibold mb-4">
+                         Sobre Nosotros
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                        Comprometidos con la <span class="gradient-text">Excelencia</span> en Educación
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Somos un instituto educativo dedicado a ofrecer formación técnica y profesional de alta calidad desde 1985.
+                    </p>
+                    
+                    <div class="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-2xl border-l-4 border-blue-600 mb-8">
+                        <h3 class="font-bold text-xl mb-3 flex items-center gap-2">
+                            <i data-lucide="target" class="w-6 h-6 text-blue-600"></i>
+                            ¡Transforma tu Futuro en 3 años!
+                        </h3>
+                        <p class="text-gray-700">
+                            Conviértete en un profesional técnico altamente capacitado y obtén tu título a nombre de la Nación.
+                        </p>
+                    </div>
 
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">Instituto Licenciado</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">Educación Gratuita</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">Bolsa de Trabajo</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <i data-lucide="check-circle" class="w-6 h-6 text-blue-600"></i>
+                            </div>
+                            <span class="font-semibold text-gray-800">Prácticas Garantizadas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative fade-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl transform rotate-3"></div>
+                    <div class="relative bg-white p-8 rounded-3xl shadow-2xl">
+                        <div class="absolute -top-8 -left-8 w-28 h-28 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-2xl z-10">
+                            <div class="text-center">
+                                <div class="text-4xl font-bold">39</div>
+                                <div class="text-xs">AÑOS</div>
+                            </div>
+                        </div>
+                        <img src="assets/images/instituto.jpg" alt="IESTP Huanta" class="w-full rounded-2xl mb-6">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                <i data-lucide="award" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
+                                <div class="font-bold text-blue-900">Licenciado</div>
+                                <div class="text-xs text-gray-600">MINEDU</div>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-xl text-center">
+                                <i data-lucide="users" class="w-8 h-8 text-blue-600 mx-auto mb-2"></i>
+                                <div class="font-bold text-blue-900">+3000</div>
+                                <div class="text-xs text-gray-600">Egresados</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-block bg-blue-100 text-blue-600 px-6 py-2 rounded-full font-semibold mb-4">
+                    ⭐ Servicios Académicos
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    ¿Por qué elegir <span class="gradient-text">IESTP Huanta</span>?
+                </h2>
             </div>
 
-            <div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 fade-up">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
+                        <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Formación de Calidad</h3>
+                    <p class="text-gray-600 text-sm text-center">Programas actualizados según demandas del mercado laboral</p>
+                </div>
 
-                <h3>30+</h3>
-                <p>Años de Experiencia</p>
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 fade-up">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
+                        <i data-lucide="user-check" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Docentes Expertos</h3>
+                    <p class="text-gray-600 text-sm text-center">Profesionales con amplia experiencia en su campo</p>
+                </div>
 
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 fade-up">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Bolsa de Trabajo</h3>
+                    <p class="text-gray-600 text-sm text-center">Convenios con empresas para prácticas y empleo</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 fade-up">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
+                        <i data-lucide="flask-conical" class="w-8 h-8 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-center mb-3">Laboratorios Modernos</h3>
+                    <p class="text-gray-600 text-sm text-center">Equipamiento de última generación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                    Lo que dicen nuestros <span class="text-yellow-300">estudiantes</span>
+                </h2>
+                <p class="text-blue-100 text-lg">Testimonios de quienes ya lograron su meta</p>
             </div>
 
-        </section>
-
-        <!-- CARRERAS -->
-
-        <section id="carreras">
-
-            <h2>Programas de Estudio</h2>
-
-            <article>
-
-                <h3>Diseño y Programación Web</h3>
-
-                <p>
-                    Desarrollo de aplicaciones web modernas.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Enfermería Técnica</h3>
-
-                <p>
-                    Formación para el sector salud.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Mecatrónica Automotriz</h3>
-
-                <p>
-                    Especialización en sistemas automotrices.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Industrias Alimentarias</h3>
-
-                <p>
-                    Procesamiento y control de alimentos.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Producción Agropecuaria</h3>
-
-                <p>
-                    Gestión de producción agrícola y pecuaria.
-                </p>
-
-            </article>
-
-        </section>
-
-        <!-- SERVICIOS -->
-
-        <section id="servicios">
-
-            <h2>Servicios Institucionales</h2>
-
-            <article>
-
-                <h3>Biblioteca</h3>
-
-                <p>
-                    Acceso a material académico.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Laboratorios</h3>
-
-                <p>
-                    Ambientes equipados para prácticas.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Red Telemática</h3>
-
-                <p>
-                    Infraestructura tecnológica moderna.
-                </p>
-
-            </article>
-
-        </section>
-
-        <!-- NOTICIAS -->
-
-        <section id="noticias">
-
-            <h2>Últimas Noticias</h2>
-
-            <article>
-
-                <h3>Inicio de Matrículas</h3>
-
-                <p>
-                    Matrículas abiertas para el nuevo periodo académico.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Feria Tecnológica</h3>
-
-                <p>
-                    Participación de estudiantes con proyectos innovadores.
-                </p>
-
-            </article>
-
-        </section>
-
-        <!-- EVENTOS -->
-
-        <section id="eventos">
-
-            <h2>Eventos</h2>
-
-            <article>
-
-                <h3>Aniversario Institucional</h3>
-
-                <p>
-                    Actividades conmemorativas del instituto.
-                </p>
-
-            </article>
-
-            <article>
-
-                <h3>Concurso de Innovación</h3>
-
-                <p>
-                    Presentación de proyectos tecnológicos.
-                </p>
-
-            </article>
-
-        </section>
-
-        <!-- GALERIA -->
-
-        <section id="galeria">
-
-            <h2>Galería Institucional</h2>
-
-            assets/images/galeria1.jpg
-            assets/images/galeria2.jpg
-            assets/images/galeria3.jpg
-
-        </section>
-
-        <!-- CONTACTO -->
-
-        <section id="contacto">
-
-            <h2>Contáctanos</h2>
-
-            <form>
-
-                <input type="text" placeholder="Nombre">
-
-                <input type="email" placeholder="Correo">
-
-                <textarea placeholder="Mensaje"></textarea>
-
-                <button type="submit">
-                    Enviar
-                </button>
-
-            </form>
-
-        </section>
-
-    </main>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/15 transition fade-up">
+                    <i data-lucide="quote" class="w-10 h-10 text-yellow-300 mb-4"></i>
+                    <p class="text-blue-100 mb-6 leading-relaxed">
+                        "El Instituto Huanta me brindó una formación práctica y sólida. Gracias a los laboratorios bien equipados, conseguí un excelente empleo en una empresa de tecnología."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-2xl font-bold">
+                            EV
+                        </div>
+                        <div>
+                            <div class="font-bold">Efrael Villanueva</div>
+                            <div class="text-sm text-blue-200">Diseño y Programación Web</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 hover:bg-white/15 transition fade-up">
+                    <i data-lucide="quote" class="w-10 h-10 text-yellow-300 mb-4"></i>
+                    <p class="text-blue-100 mb-6 leading-relaxed">
+                        "Estudiar en el Instituto Huanta me preparó para el mundo laboral. La formación integral y el apoyo de los profesores fueron clave para mi éxito profesional."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-2xl font-bold">
+                            ES
+                        </div>
+                        <div>
+                            <div class="font-bold">Ever Sanchez</div>
+                            <div class="text-sm text-blue-200">Enfermería Técnica</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO SIMPLE (ENLACES) -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    ¿Necesitas <span class="gradient-text">información</span>?
+                </h2>
+                <p class="text-gray-600">Contáctanos por cualquiera de estos medios</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/51999999999?text=Hola%2C%20quiero%20información%20sobre%20el%20IESTP%20Huanta" 
+                   target="_blank"
+                   class="bg-green-500 hover:bg-green-600 text-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col items-center text-center fade-up">
+                    <svg class="w-12 h-12 mb-3" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <h3 class="font-bold mb-1">WhatsApp</h3>
+                    <p class="text-sm text-green-100">Escríbenos ahora</p>
+                </a>
+
+                <!-- Teléfono -->
+                <a href="tel:066322296" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col items-center text-center fade-up">
+                    <i data-lucide="phone" class="w-12 h-12 mb-3"></i>
+                    <h3 class="font-bold mb-1">Llámanos</h3>
+                    <p class="text-sm text-blue-100">(066) 322296</p>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:contactos@iestphuanta.edu.pe" 
+                   class="bg-indigo-600 hover:bg-indigo-700 text-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col items-center text-center fade-up">
+                    <i data-lucide="mail" class="w-12 h-12 mb-3"></i>
+                    <h3 class="font-bold mb-1">Email</h3>
+                    <p class="text-sm text-indigo-100">Contáctanos</p>
+                </a>
+
+                <!-- Facebook -->
+                <a href="#" 
+                   target="_blank"
+                   class="bg-blue-800 hover:bg-blue-900 text-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 flex flex-col items-center text-center fade-up">
+                    <i data-lucide="facebook" class="w-12 h-12 mb-3"></i>
+                    <h3 class="font-bold mb-1">Facebook</h3>
+                    <p class="text-sm text-blue-200">Síguenos</p>
+                </a>
+            </div>
+
+            <!-- Información adicional -->
+            <div class="mt-12 text-center fade-up">
+                <div class="inline-flex items-center gap-2 text-gray-600 bg-gray-100 px-6 py-3 rounded-full flex-wrap justify-center">
+                    <i data-lucide="clock" class="w-5 h-5 text-blue-600"></i>
+                    <span class="font-medium">Lun - Vie: 7:30 am - 1:15 pm</span>
+                    <span class="mx-2 hidden sm:inline">|</span>
+                    <i data-lucide="map-pin" class="w-5 h-5 text-blue-600"></i>
+                    <span class="font-medium">Jr. Córdova N° 650 - Ayacucho</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- FOOTER -->
     <footer class="footer-principal">
         <div class="footer-contenido">
             <div class="footer-grid">
-
-                <!-- Columna 1: Instituto -->
                 <div class="footer-col">
                     <h3 class="footer-titulo">IESTP Huanta</h3>
                     <p class="footer-texto">Instituto de Educación Superior Público "Huanta"</p>
                 </div>
-
-                <!-- Columna 2: Facebook -->
                 <div class="footer-col">
                     <h3 class="footer-titulo">Facebook</h3>
                     <a href="#" class="footer-link" target="_blank">
@@ -329,8 +570,6 @@
                         <span>Facebook</span>
                     </a>
                 </div>
-
-                <!-- Columna 3: Información -->
                 <div class="footer-col">
                     <h3 class="footer-titulo">Información</h3>
                     <ul class="footer-lista">
@@ -348,22 +587,15 @@
                         </li>
                     </ul>
                 </div>
-
-                <!-- Columna 4: Horario -->
                 <div class="footer-col">
                     <h3 class="footer-titulo">Horario de atención</h3>
                     <p class="footer-texto">Lun – Vier: 7:30 am – 1:15 pm</p>
                 </div>
-
             </div>
-
-          
             <div class="footer-copyright">
                 <p>© 2026 Instituto de Educación Superior Público "Huanta"</p>
             </div>
         </div>
-
-       
         <button class="btn-volver-arriba" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Volver arriba">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
@@ -371,6 +603,7 @@
         </button>
     </footer>
 
+    <!-- SCRIPTS -->
+    <script src="./js/app.js"></script>
 </body>
-
 </html>
