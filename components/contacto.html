@@ -1,22 +1,90 @@
-<section id="contacto">
+<section id="contacto" class="py-16 bg-gradient-to-br from-blue-50 to-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-10 reveal">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">¿Necesitas información?</h2>
+            <p class="text-slate-600">Contáctanos por cualquiera de estos medios</p>
+        </div>
 
-    <h2>Contáctanos</h2>
+        <div class="grid lg:grid-cols-5 gap-8 items-start">
+            <div class="lg:col-span-2 space-y-3 reveal">
+                <a href="https://wa.me/51999999999" target="_blank" class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-green-500 transition">
+                        <i data-lucide="message-circle" class="w-6 h-6 text-green-600 group-hover:text-white transition"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">WhatsApp</h3>
+                        <p class="text-xs text-slate-500">Escríbenos ahora</p>
+                    </div>
+                </a>
 
-    <form>
+                <a href="tel:066322296" class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 transition">
+                        <i data-lucide="phone" class="w-6 h-6 text-blue-600 group-hover:text-white transition"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">Llámanos</h3>
+                        <p class="text-xs text-slate-500">(066) 322296</p>
+                    </div>
+                </a>
 
-        <input type="text"
-               placeholder="Nombre">
+                <a href="mailto:contactos@iestphuanta.edu.pe" class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-slate-700 transition">
+                        <i data-lucide="mail" class="w-6 h-6 text-slate-700 group-hover:text-white transition"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">Email</h3>
+                        <p class="text-xs text-slate-500">Contáctanos</p>
+                    </div>
+                </a>
 
-        <input type="email"
-               placeholder="Correo">
+                <a href="#" target="_blank" class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm hover:shadow-md transition group">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-blue-800 transition">
+                        <i data-lucide="facebook" class="w-6 h-6 text-blue-800 group-hover:text-white transition"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-800 text-sm">Facebook</h3>
+                        <p class="text-xs text-slate-500">Síguenos</p>
+                    </div>
+                </a>
 
-        <textarea
-        placeholder="Mensaje"></textarea>
+                <div class="bg-blue-600 text-white p-4 rounded-xl mt-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="clock" class="w-4 h-4"></i>
+                        <span class="font-semibold text-sm">Horario de atención</span>
+                    </div>
+                    <p class="text-xs text-blue-100">Lun - Vier: 7:30 am - 1:15 pm</p>
+                </div>
+            </div>
 
-        <button type="submit">
-            Enviar
-        </button>
+            <div class="lg:col-span-3 reveal">
+                <div class="bg-white rounded-2xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Envíanos un mensaje</h3>
+                    
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" required placeholder="Nombre completo *" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <input type="tel" placeholder="Teléfono" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
+                        </div>
 
-    </form>
+                        <input type="email" required placeholder="Correo electrónico *" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
 
+                        <select required class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-600">
+                            <option value="">Motivo de consulta *</option>
+                            <option value="admision">Información de Admisión</option>
+                            <option value="carreras">Información de Carreras</option>
+                            <option value="tramites">Trámites Administrativos</option>
+                            <option value="otro">Otro</option>
+                        </select>
+
+                        <textarea rows="3" required placeholder="Mensaje *" class="w-full px-4 py-2.5 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 resize-none"></textarea>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                            Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>

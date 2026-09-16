@@ -1,77 +1,100 @@
-/* ===== ESTILOS ADICIONALES PARA HOME ===== */
+/* ============================================
+   ANIMACIONES DE FORMAS GEOMÉTRICAS (SLIDER)
+   ============================================ */
+@keyframes shapeMove1 {
+    0%, 100% { clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%); }
+    50% { clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%); }
+}
 
-/* Stats cards */
+@keyframes shapeMove2 {
+    0%, 100% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(-30px) rotate(5deg); }
+}
+
+@keyframes shapeMove3 {
+    0%, 100% { transform: rotate(-12deg) scale(1); }
+    50% { transform: rotate(-8deg) scale(1.1); }
+}
+
+@keyframes shapeMove4 {
+    0%, 100% { width: 33.33%; opacity: 0.3; }
+    50% { width: 40%; opacity: 0.5; }
+}
+
+/* Animaciones activas cuando cambia el slide */
+.slider-container.active .shape-1 {
+    animation: shapeMove1 1s ease-in-out;
+}
+
+.slider-container.active .shape-2 {
+    animation: shapeMove2 1s ease-in-out;
+}
+
+.slider-container.active .shape-3 {
+    animation: shapeMove3 1s ease-in-out;
+}
+
+.slider-container.active .shape-4 {
+    animation: shapeMove4 1s ease-in-out;
+}
+
+/* ============================================
+   STAT CARDS COMPACTAS
+   ============================================ */
 .stat-card {
-    position: relative;
-    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.stat-card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-    transform: rotate(45deg);
-    transition: all 0.5s;
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.stat-card:hover::before {
-    animation: shimmer 0.5s ease-in-out;
+/* ============================================
+   SLIDER DOTS
+   ============================================ */
+.slider-dot.active {
+    background-color: white;
+    width: 2rem;
+    border-radius: 9999px;
 }
 
-/* Career cards hover effects */
-.group:hover .shimmer {
-    animation: shimmer 2s infinite;
+/* ============================================
+   REVEAL ANIMATION (Scroll)
+   ============================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
 }
 
-/* FAQ Styles */
-.faq-item {
-    transition: all 0.3s ease;
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.faq-item:hover {
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+/* ============================================
+   FLOAT ANIMATION
+   ============================================ */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
+.animate-float {
+    animation: float 6s ease-in-out infinite;
 }
 
-.faq-answer:not(.hidden) {
-    max-height: 500px;
-    padding-bottom: 1rem;
-}
-
-/* Form multi-step */
-.step {
-    animation: fadeIn 0.5s ease-in;
-}
-
-@keyframes fadeIn {
+/* ============================================
+   FADE IN UP
+   ============================================ */
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateX(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-/* Search results */
-#search-results {
-    animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -79,83 +102,129 @@
     }
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero-gradient h1 {
-        font-size: 2.5rem !important;
-    }
-    
-    .stat-card {
-        margin-bottom: 1rem;
-    }
-    
-    #site-search {
-        width: 100%;
-        max-width: none;
-    }
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Loading states */
-.loading {
+/* ============================================
+   MODAL DE VIDEO
+   ============================================ */
+#video-modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#video-modal video {
+    border-radius: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ============================================
+   BOTÓN DE VIDEO
+   ============================================ */
+#play-video-btn {
     position: relative;
-    pointer-events: none;
 }
 
-.loading::after {
+#play-video-btn::before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 20px;
-    margin: -10px 0 0 -10px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-top-color: white;
+    inset: -6px;
     border-radius: 50%;
-    animation: spin 0.8s linear infinite;
+    background: rgba(255, 255, 255, 0.15);
+    animation: pulse-ring 2s ease-out infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
 }
 
-/* Custom scrollbar */
+/* ============================================
+   SCROLLBAR PERSONALIZADA
+   ============================================ */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #3b82f6;
-    border-radius: 5px;
+    background: linear-gradient(to bottom, #2563eb, #1e40af);
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #2563eb;
+    background: linear-gradient(to bottom, #1d4ed8, #1e3a8a);
 }
 
-/* Selection color */
-::selection {
-    background: #3b82f6;
-    color: white;
+/* ============================================
+   ANIMACIONES GENERALES
+   ============================================ */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
-/* Focus visible for accessibility */
-*:focus-visible {
-    outline: 3px solid #3b82f6;
-    outline-offset: 2px;
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Print styles */
-@media print {
-    .no-print {
-        display: none !important;
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .stat-card {
+        padding: 1rem;
     }
     
-    body {
-        background: white;
+    .stat-card .counter {
+        font-size: 2rem !important;
     }
+    
+    .animate-fade-in-up {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+}
+
+@media (max-width: 480px) {
+    .stat-card {
+        padding: 0.75rem;
+    }
+    
+    .stat-card .counter {
+        font-size: 1.75rem !important;
+    }
+}
+
+/* ============================================
+   HOVER EFFECTS GENERALES
+   ============================================ */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   NAVBAR SCROLL EFFECT
+   ============================================ */
+header.scrolled {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 }

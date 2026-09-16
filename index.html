@@ -4,440 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IESTP Huanta - Excelencia en Educación Técnica</title>
+    
     <link href="./css/output.css" rel="stylesheet">
+    <link href="./css/navbar.css" rel="stylesheet">
+    <link href="./css/home.css" rel="stylesheet">
     <link href="./css/footer.css" rel="stylesheet">
+    <link href="./css/responsive.css" rel="stylesheet">
+    
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-        
-        /* Colores principales - Tu paleta */
-        .bg-primary { background-color: #4f46e5; }
-        .text-primary { color: #4f46e5; }
-        .gradient-purple {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .gradient-blue-purple {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-        }
-        
-        /* Animaciones */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .hover-lift {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
-        }
-
-        /* Header shape */
-        .header-shape {
-            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
-        }
-
-        /* Formas decorativas */
-        .shape-circle {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 50%;
-        }
-    </style>
 </head>
 <body class="bg-white text-slate-800 antialiased">
 
     <!-- TOP BAR -->
-    <div class="bg-white border-b border-slate-100 py-3">
+    <div class="bg-white border-b border-slate-100 py-2">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-wrap justify-center items-center gap-6 text-sm text-slate-600">
-                <a href="tel:066322296" class="flex items-center gap-2 hover:text-indigo-600 transition">
-                    <i data-lucide="phone" class="w-4 h-4 text-indigo-600"></i>
+                <a href="tel:066322296" class="flex items-center gap-2 hover:text-blue-600 transition">
+                    <i data-lucide="phone" class="w-4 h-4 text-blue-600"></i>
                     <span>(066) 322296</span>
                 </a>
                 <div class="flex items-center gap-2">
-                    <i data-lucide="map-pin" class="w-4 h-4 text-indigo-600"></i>
+                    <i data-lucide="map-pin" class="w-4 h-4 text-blue-600"></i>
                     <span>Jr. Córdova N° 650</span>
                 </div>
-                <a href="mailto:contactos@iestphuanta.edu.pe" class="flex items-center gap-2 hover:text-indigo-600 transition">
-                    <i data-lucide="mail" class="w-4 h-4 text-indigo-600"></i>
+                <a href="mailto:contactos@iestphuanta.edu.pe" class="flex items-center gap-2 hover:text-blue-600 transition">
+                    <i data-lucide="mail" class="w-4 h-4 text-blue-600"></i>
                     <span>contactos@iestphuanta.edu.pe</span>
                 </a>
-                <a href="#" class="flex items-center gap-2 hover:text-indigo-600 transition">
-                    <i data-lucide="facebook" class="w-4 h-4 text-indigo-600"></i>
+                <a href="#" class="flex items-center gap-2 hover:text-blue-600 transition">
+                    <i data-lucide="facebook" class="w-4 h-4 text-blue-600"></i>
                     <span>Facebook</span>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- HEADER -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex items-center">
-                    <div class="header-shape px-8 py-3 flex items-center gap-3">
-                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md">
-                            <span class="text-indigo-700 font-bold text-lg">H</span>
-                        </div>
-                        <div class="text-white">
-                            <h1 class="text-lg font-bold leading-tight">IESTP</h1>
-                            <p class="text-xs text-indigo-100">HUANTA</p>
-                        </div>
-                    </div>
-                </div>
-
-                <nav class="hidden lg:flex items-center gap-6">
-                    <a href="#nosotros" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors flex items-center gap-1">Nosotros <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
-                    <a href="#carreras" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors flex items-center gap-1">Programas de estudios <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
-                    <a href="pages/admision.html" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors flex items-center gap-1">Admisión y Matrícula <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
-                    <a href="#" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors flex items-center gap-1">Transparencia <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
-                    <a href="#" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors flex items-center gap-1">Trámite <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
-                    <a href="#contacto" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors">Contáctanos</a>
-                    <a href="#servicios" class="text-slate-700 hover:text-indigo-600 font-medium text-sm transition-colors flex items-center gap-1">Servicios <i data-lucide="chevron-down" class="w-3 h-3"></i></a>
-                </nav>
-
-                <button id="mobile-menu-btn" class="lg:hidden p-2">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
-            <div class="px-6 py-4 space-y-3">
-                <a href="#nosotros" class="block py-2 text-slate-700">Nosotros</a>
-                <a href="#carreras" class="block py-2 text-slate-700">Programas de estudios</a>
-                <a href="#contacto" class="block py-2 bg-indigo-600 text-white px-4 py-2 rounded-lg text-center">Contáctanos</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- HERO SECTION -->
-    <section id="inicio" class="relative bg-slate-50 overflow-hidden">
-        <div class="relative h-[600px]">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80" alt="Graduado" class="absolute inset-0 w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/90 via-indigo-800/70 to-transparent"></div>
-            
-            <div class="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-indigo-600/30 to-transparent" style="clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);"></div>
-
-            <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
-                <div class="max-w-2xl text-white">
-                    <div class="inline-block bg-white text-indigo-700 px-5 py-2 rounded-full text-sm font-bold mb-6 shadow-lg reveal">
-                        INSTITUTO DE EDUCACIÓN SUPERIOR PÚBLICO "HUANTA"
-                    </div>
-                    
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight reveal">
-                        Construye tu futuro con<br>
-                        <span class="text-indigo-200">formación de calidad</span>
-                    </h1>
-                    
-                    <p class="text-lg text-indigo-100 mb-8 leading-relaxed reveal">
-                        El Instituto de Educación Superior Público Huanta se enorgullece de ser un instituto licenciado, lo que garantiza que nuestros programas académicos cumplen con los más altos estándares de calidad.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- TARJETAS DE CARRERAS -->
-        <div class="relative z-20 -mt-24 max-w-7xl mx-auto px-6 pb-20">
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <div class="bg-white rounded-xl shadow-xl p-6 text-center hover-lift reveal group cursor-pointer border border-slate-100">
-                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors">
-                        <i data-lucide="code-2" class="w-7 h-7 text-blue-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-sm">Diseño y Programación Web</h3>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl p-6 text-center hover-lift reveal group cursor-pointer border border-slate-100">
-                    <div class="w-14 h-14 bg-cyan-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-cyan-600 transition-colors">
-                        <i data-lucide="heart-pulse" class="w-7 h-7 text-cyan-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-sm">Enfermería Técnica</h3>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl p-6 text-center hover-lift reveal group cursor-pointer border border-slate-100">
-                    <div class="w-14 h-14 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600 transition-colors">
-                        <i data-lucide="car" class="w-7 h-7 text-purple-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-sm">Mecatrónica Automotriz</h3>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl p-6 text-center hover-lift reveal group cursor-pointer border border-slate-100">
-                    <div class="w-14 h-14 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-500 transition-colors">
-                        <i data-lucide="utensils" class="w-7 h-7 text-orange-500 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-sm">Industrias de Alimentos y Bebidas</h3>
-                </div>
-
-                <div class="bg-white rounded-xl shadow-xl p-6 text-center hover-lift reveal group cursor-pointer border border-slate-100">
-                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600 transition-colors">
-                        <i data-lucide="sprout" class="w-7 h-7 text-green-600 group-hover:text-white transition-colors"></i>
-                    </div>
-                    <h3 class="font-bold text-slate-800 text-sm">Producción Agropecuaria</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ENLACES DE INTERÉS -->
-    <section class="py-12 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
-                <span class="text-slate-500 font-semibold text-sm uppercase tracking-wider">Enlaces de interés:</span>
-                <div class="flex flex-wrap items-center justify-center gap-6">
-                    <a href="#" class="bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition flex items-center gap-2 text-slate-700 font-medium text-sm border border-slate-200">
-                        <i data-lucide="landmark" class="w-5 h-5 text-red-600"></i> MINEDU
-                    </a>
-                    <a href="#" class="bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition flex items-center gap-2 text-slate-700 font-medium text-sm border border-slate-200">
-                        <i data-lucide="scroll-text" class="w-5 h-5 text-blue-600"></i> Titula
-                    </a>
-                    <a href="#" class="bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition flex items-center gap-2 text-slate-700 font-medium text-sm border border-slate-200">
-                        <i data-lucide="user-check" class="w-5 h-5 text-indigo-600"></i> Registra
-                    </a>
-                    <a href="#" class="bg-white px-6 py-3 rounded-lg shadow-sm hover:shadow-md transition flex items-center gap-2 text-slate-700 font-medium text-sm border border-slate-200">
-                        <i data-lucide="trending-up" class="w-5 h-5 text-green-600"></i> Avanza
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOBRE NOSOTROS -->
-    <section id="nosotros" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-indigo-600 font-semibold text-sm uppercase tracking-wider">Sobre Nuestro Instituto</span>
-                        <div class="h-0.5 w-12 bg-indigo-600"></div>
-                    </div>
-                    <h2 class="text-4xl font-bold text-slate-900 mb-6">
-                        Comprometidos con la <span class="text-indigo-600">Excelencia</span> en Educación
-                    </h2>
-                    <p class="text-slate-600 text-lg mb-6 leading-relaxed">
-                        Un instituto educativo dedicado a ofrecer una formación técnica y profesional de alta calidad. Nuestra variada oferta de programas está diseñada para satisfacer las demandas del mercado laboral moderno.
-                    </p>
-                    
-                    <div class="bg-indigo-50 border-l-4 border-indigo-600 p-6 rounded-r-lg mb-8">
-                        <h3 class="font-bold text-lg mb-2 text-slate-800">¡Transforma tu Futuro en 3 solo Años!</h3>
-                        <p class="text-slate-600">
-                            En el Instituto de Educación Superior Tecnológico Huanta, te ofrecemos la oportunidad de convertirte en un profesional técnico altamente capacitado en solo 3 años.
-                        </p>
-                    </div>
-
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                            <i data-lucide="phone" class="w-5 h-5 text-indigo-600"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm text-slate-500">Contactos:</p>
-                            <p class="text-xl font-bold text-slate-800">(066) 322296</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative reveal">
-                    <div class="absolute -top-4 -right-4 w-32 h-32 gradient-purple rounded-full flex items-center justify-center text-white shadow-xl z-10">
-                        <div class="text-center">
-                            <div class="text-xs font-medium">AÑOS</div>
-                            <div class="text-4xl font-bold">39</div>
-                        </div>
-                    </div>
-                    <div class="bg-slate-100 rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="assets/images/instituto.jpg" alt="IESTP Huanta" class="w-full h-80 object-cover">
-                        <div class="p-6 bg-white">
-                            <div class="font-bold text-slate-800 text-lg">INSTITUTO LICENCIADO</div>
-                            <p class="text-slate-500 text-sm">Reconocido por MINEDU</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ESTADÍSTICAS -->
-    <section class="py-20 bg-gradient-to-br from-indigo-900 to-indigo-800 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover" alt="">
-        </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12 reveal">
-                <h2 class="text-4xl font-bold mb-4">Preparándote para tu Éxito</h2>
-                <p class="text-indigo-200 text-lg">Ofrecemos las Mejores Soluciones Educativas</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto bg-white/10 backdrop-blur-md rounded-3xl p-8 reveal">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="graduation-cap" class="w-8 h-8"></i>
-                    </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-target="3000">0</div>
-                    <div class="text-indigo-200 text-sm">Estudiantes Egresados</div>
-                </div>
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="users" class="w-8 h-8"></i>
-                    </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-target="50">0</div>
-                    <div class="text-indigo-200 text-sm">Docentes Especializados</div>
-                </div>
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="book-open" class="w-8 h-8"></i>
-                    </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-target="5">0</div>
-                    <div class="text-indigo-200 text-sm">Programas de Estudio</div>
-                </div>
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="clock" class="w-8 h-8"></i>
-                    </div>
-                    <div class="text-4xl font-bold mb-2 counter" data-target="3">0</div>
-                    <div class="text-indigo-200 text-sm">Años para ser Profesional</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios" class="py-20 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <div class="inline-block bg-white px-6 py-2 rounded-full shadow-md mb-4">
-                    <span class="text-indigo-600 font-semibold text-sm">~ Nuestros Servicios Destacados ~</span>
-                </div>
-                <h2 class="text-4xl font-bold text-slate-900 mb-4">
-                    Nuestros <span class="text-indigo-600">Servicios</span> Destacados
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift reveal">
-                    <div class="w-16 h-16 gradient-blue-purple rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
-                        <i data-lucide="book-open" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 text-center">Formación Técnica de Alta Calidad</h3>
-                    <p class="text-slate-600 text-sm text-center">Programas diseñados para el éxito en el mercado laboral</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift reveal">
-                    <div class="w-16 h-16 gradient-blue-purple rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
-                        <i data-lucide="user-check" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 text-center">Asesoría Académica Personalizada</h3>
-                    <p class="text-slate-600 text-sm text-center">Te ayudamos a elegir tu carrera ideal</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift reveal">
-                    <div class="w-16 h-16 gradient-blue-purple rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
-                        <i data-lucide="briefcase" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 text-center">Experiencias Formativas Reales</h3>
-                    <p class="text-slate-600 text-sm text-center">Prácticas en empresas del sector</p>
-                </div>
-
-                <div class="bg-white rounded-2xl p-8 shadow-lg hover-lift reveal">
-                    <div class="w-16 h-16 gradient-blue-purple rounded-2xl flex items-center justify-center mb-6 -mt-16 mx-auto shadow-lg">
-                        <i data-lucide="refresh-cw" class="w-8 h-8 text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3 text-center">Capacitación Constante</h3>
-                    <p class="text-slate-600 text-sm text-center">Siempre actualizados con las últimas tecnologías</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <h2 class="text-4xl font-bold text-slate-900 mb-4">¿Necesitas información?</h2>
-                <p class="text-slate-600 text-lg">Contáctanos por cualquiera de estos medios</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                <a href="https://wa.me/51999999999" target="_blank" 
-                   class="bg-green-500 hover:bg-green-600 text-white p-6 rounded-2xl shadow-lg hover-lift flex flex-col items-center text-center reveal">
-                    <i data-lucide="message-circle" class="w-12 h-12 mb-3"></i>
-                    <h3 class="font-bold mb-1">WhatsApp</h3>
-                    <p class="text-sm text-green-100">Escríbenos ahora</p>
-                </a>
-
-                <a href="tel:066322296" 
-                   class="bg-indigo-600 hover:bg-indigo-700 text-white p-6 rounded-2xl shadow-lg hover-lift flex flex-col items-center text-center reveal">
-                    <i data-lucide="phone" class="w-12 h-12 mb-3"></i>
-                    <h3 class="font-bold mb-1">Llámanos</h3>
-                    <p class="text-sm text-indigo-100">(066) 322296</p>
-                </a>
-
-                <a href="mailto:contactos@iestphuanta.edu.pe" 
-                   class="bg-slate-700 hover:bg-slate-800 text-white p-6 rounded-2xl shadow-lg hover-lift flex flex-col items-center text-center reveal">
-                    <i data-lucide="mail" class="w-12 h-12 mb-3"></i>
-                    <h3 class="font-bold mb-1">Email</h3>
-                    <p class="text-sm text-slate-300">Contáctanos</p>
-                </a>
-
-                <a href="#" target="_blank" 
-                   class="bg-blue-800 hover:bg-blue-900 text-white p-6 rounded-2xl shadow-lg hover-lift flex flex-col items-center text-center reveal">
-                    <i data-lucide="facebook" class="w-12 h-12 mb-3"></i>
-                    <h3 class="font-bold mb-1">Facebook</h3>
-                    <p class="text-sm text-blue-200">Síguenos</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer-principal">
-        <div class="footer-contenido">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h3 class="footer-titulo">IESTP Huanta</h3>
-                    <p class="footer-texto">Instituto de Educación Superior Público "Huanta"</p>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-titulo">Facebook</h3>
-                    <a href="#" class="footer-link" target="_blank">
-                        <i data-lucide="facebook" class="w-4 h-4"></i>
-                        <span>Facebook</span>
-                    </a>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-titulo">Información</h3>
-                    <ul class="footer-lista">
-                        <li class="footer-item">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
-                            <span>Jr. Córdova N° 650</span>
-                        </li>
-                        <li class="footer-item">
-                            <i data-lucide="phone" class="w-4 h-4"></i>
-                            <span>Teléfono: (066) 322296</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3 class="footer-titulo">Horario de atención</h3>
-                    <p class="footer-texto">Lun – Vier: 7:30 am – 1:15 pm</p>
-                </div>
-            </div>
-            <div class="footer-copyright">
-                <p>© 2026 Instituto de Educación Superior Público "Huanta"</p>
-            </div>
-        </div>
-        <button class="btn-volver-arriba" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Volver arriba">
-            <i data-lucide="arrow-up" class="w-5 h-5"></i>
-        </button>
-    </footer>
+    <!-- CONTENEDORES DE COMPONENTES -->
+    <div id="navbar-container"></div>
+    <div id="slider-container"></div>
+    <div id="banner-container"></div>
+    <div id="card-carrera-container"></div>
+    <div id="estadisticas-container"></div>
+    <div id="nosotros-container"></div>
+    <div id="servicios-container"></div>
+    <div id="eventos-container"></div>
+    <div id="galeria-container"></div>
+    <div id="noticias-container"></div>
+    <div id="contacto-container"></div>
+    <div id="footer-container"></div>
 
     <script src="./js/app.js"></script>
+    <script src="./js/navbar.js"></script>
 </body>
 </html>

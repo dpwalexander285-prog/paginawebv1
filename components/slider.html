@@ -1,0 +1,75 @@
+<section class="relative h-[650px] overflow-hidden">
+    <!-- Slides -->
+    <div class="slider-container absolute inset-0">
+        <!-- Slide 1 -->
+        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1920&q=80');">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1920&q=80');">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1920&q=80');">
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-800/80 to-transparent"></div>
+        </div>
+    </div>
+    
+    <!-- Formas geométricas animadas (efecto de intersección) -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Forma 1 - Triángulo -->
+        <div class="shape-1 absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-blue-600/40 to-transparent transition-all duration-1000" style="clip-path: polygon(0 0, 100% 0, 60% 100%, 0% 100%);"></div>
+        
+        <!-- Forma 2 - Círculo animado -->
+        <div class="shape-2 absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-purple-600/30 to-blue-600/30 rounded-full blur-3xl animate-pulse"></div>
+        
+        <!-- Forma 3 - Línea diagonal -->
+        <div class="shape-3 absolute bottom-0 left-1/4 w-3/4 h-1/2 bg-gradient-to-tr from-transparent via-blue-500/20 to-transparent transform -rotate-12 transition-all duration-1000"></div>
+        
+        <!-- Forma 4 - Rectángulo -->
+        <div class="shape-4 absolute top-1/3 right-0 w-1/3 h-1/4 bg-gradient-to-l from-blue-600/30 to-transparent transition-all duration-1000"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center">
+        <div class="max-w-2xl text-white">
+            <div class="inline-block bg-white/20 backdrop-blur-md px-6 py-2.5 rounded-full text-sm font-bold mb-6 border border-white/30 animate-fade-in-up">
+                INSTITUTO DE EDUCACIÓN SUPERIOR PÚBLICO "HUANTA"
+            </div>
+            
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.2s;">
+                Construye tu futuro con<br>
+                <span class="text-blue-200">formación de calidad</span>
+            </h1>
+            
+            <p class="text-lg text-blue-100 mb-8 leading-relaxed animate-fade-in-up" style="animation-delay: 0.4s;">
+                El Instituto de Educación Superior Público Huanta se enorgullece de ser un instituto licenciado, lo que garantiza que nuestros programas académicos cumplen con los más altos estándares de calidad.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                <a href="#carreras" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 hover:text-blue-700 transition-all duration-300 shadow-2xl hover:shadow-blue-500/30 hover:scale-105 flex items-center gap-2 group">
+                    <i data-lucide="graduation-cap" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+                    Ver Carreras
+                </a>
+                <a href="#nosotros" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-blue-600 transition-all duration-300 hover:scale-105 flex items-center gap-2 group">
+                    <i data-lucide="info" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+                    Conócenos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controles del slider -->
+    <button class="slider-prev absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 backdrop-blur-sm z-20 border border-white/20">
+        <i data-lucide="chevron-left" class="w-6 h-6"></i>
+    </button>
+    <button class="slider-next absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 backdrop-blur-sm z-20 border border-white/20">
+        <i data-lucide="chevron-right" class="w-6 h-6"></i>
+    </button>
+
+    <!-- Indicadores -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        <button class="slider-dot w-3 h-3 rounded-full bg-white transition-all duration-300 hover:scale-125 active"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300 hover:scale-125"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300 hover:scale-125"></button>
+    </div>
+</section>
